@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { addToaster } from "./ToasterSlice";
 
+
 const initialState: any = {
   addRecipe: {
     error: [],
