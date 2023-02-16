@@ -48,7 +48,7 @@ export const addRecipe = createAsyncThunk(
     const { rejectWithValue }: any = thunkAPI;
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/recipes",
+        "https://tapaq-api.onrender.com/api/recipes",
         {
           title: args.title,
           steps: args.steps,
@@ -64,7 +64,7 @@ export const addRecipe = createAsyncThunk(
 
       await axios({
         method: "post",
-        url: `http://localhost:5000/api/recipes/upload/${data.data._id}`,
+        url: `https://tapaq-api.onrender.com/api/recipes/upload/${data.data._id}`,
         withCredentials: true,
         headers: { "Content-Type": "multipart/form-data" },
         data: args.formData,
@@ -101,7 +101,7 @@ export const addReview = createAsyncThunk(
     const { rejectWithValue }: any = thunkAPI;
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/reviews/" + args.recipe,
+        "https://tapaq-api.onrender.com/api/reviews/" + args.recipe,
         args,
         {
           withCredentials: true,
@@ -137,7 +137,7 @@ export const getRecipe = createAsyncThunk(
     const { rejectWithValue }: any = thunkAPI;
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/recipes/" + args.id,
+        "https://tapaq-api.onrender.com/api/recipes/" + args.id,
         {
           withCredentials: true,
         }
@@ -172,7 +172,7 @@ export const getHomeData = createAsyncThunk(
     const { rejectWithValue }: any = thunkAPI;
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/recipes/home",
+        "https://tapaq-api.onrender.com/api/recipes/home",
         {
           withCredentials: true,
         }
@@ -210,7 +210,7 @@ export const getRecipes = createAsyncThunk(
       console.log(search, "search");
 
       const { data } = await axios.get(
-        "http://localhost:5000/api/recipes" + search,
+        "https://tapaq-api.onrender.com/api/recipes" + search,
         {
           withCredentials: true,
         }
@@ -243,7 +243,7 @@ export const getTags = createAsyncThunk(
     const { rejectWithValue }: any = thunkAPI;
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/recipes/tags",
+        "https://tapaq-api.onrender.com/api/recipes/tags",
         {
           withCredentials: true,
         }

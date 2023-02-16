@@ -22,7 +22,7 @@ export const signin = createAsyncThunk(
       console.log(args);
 
       const { data } = await axios.post(
-        "http://localhost:5000/api/users/signin",
+        "https://tapaq-api.onrender.com/api/users/signin",
         {
           email: args.email,
           password: args.password,
@@ -67,7 +67,7 @@ export const editUser = createAsyncThunk(
       console.log(args);
 
       const { data } = await axios.patch(
-        "http://localhost:5000/api/users/",
+        "https://tapaq-api.onrender.com/api/users/",
         args,
         {
           withCredentials: true,
@@ -108,7 +108,7 @@ export const signup = createAsyncThunk(
     const { rejectWithValue }: any = thunkAPI;
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/users/signup",
+        "https://tapaq-api.onrender.com/api/users/signup",
         {
           email: args.email,
           name: args.name,
@@ -142,9 +142,12 @@ export const getCurrentUser = createAsyncThunk(
   async (_, thunkAPI) => {
     const { rejectWithValue }: any = thunkAPI;
     try {
-      const { data } = await axios.get("http://localhost:5000/api/users/", {
-        withCredentials: true,
-      });
+      const { data } = await axios.get(
+        "https://tapaq-api.onrender.com/api/users/",
+        {
+          withCredentials: true,
+        }
+      );
       return data.data.user;
     } catch (err: any) {
       return rejectWithValue(err.response.data.error);
@@ -158,7 +161,7 @@ export const signoutCurrentUser = createAsyncThunk(
     const { rejectWithValue }: any = thunkAPI;
     try {
       await axios.post(
-        "http://localhost:5000/api/users/signout",
+        "https://tapaq-api.onrender.com/api/users/signout",
         {},
         {
           withCredentials: true,

@@ -28,7 +28,7 @@ const Card: FC<{
         <img
           src={`${
             imageName
-              ? "http://localhost:5000/images/" + imageName
+              ? "https://tapaq-api.onrender.com/images/" + imageName
               : "/image2.png"
           }`}
           alt="Hamburger"
