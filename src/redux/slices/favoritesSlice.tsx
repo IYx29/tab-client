@@ -13,7 +13,7 @@ export const addToFavorite = createAsyncThunk(
     const { rejectWithValue }: any = thunkAPI;
     try {
       const { data } = await axios.post(
-        "https://tapaq-api.onrender.com/api/recipes/favorites/" + id,
+        "http://localhost:5000/api/recipes/favorites/" + id,
         {},
         {
           withCredentials: true,
@@ -46,7 +46,7 @@ export const getFavorites = createAsyncThunk(
     const { rejectWithValue }: any = thunkAPI;
     try {
       const { data } = await axios.get(
-        "https://tapaq-api.onrender.com/api/recipes/favorites/me",
+        "http://localhost:5000/api/recipes/favorites/me",
         {
           withCredentials: true,
         }

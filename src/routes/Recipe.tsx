@@ -97,7 +97,7 @@ function Recipe() {
             <img
               src={`${
                 getRecipeState.recipe.image
-                  ? "https://tapaq-api.onrender.com/images/" +
+                  ? "http://localhost:5000/images/" +
                     getRecipeState.recipe.image
                   : "/image2.png"
               }`}
